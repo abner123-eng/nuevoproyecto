@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Elyon - Tu fuente de bienestar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <div class="frame">
+        <header>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='imagenes/logoElyon.png') }}" alt="Logo Elyon" class="img-logo-principal">
+            </div>
+            <h1 class="titulo-principal">Bienvenido a Elyon</h1>
+            <nav>
+                <button onclick="location.href='/'">Inicio</button>
+                <button onclick="location.href='/sobre-nosotros'">Conócenos</button>
+                <button onclick="location.href='/productos'">Productos</button>
+                <button onclick="location.href='/contacto'">Contacto</button>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Bienestar Natural: La Clave para una Vida Saludable</h2>
+                <p>En Elyon, nos dedicamos a mejorar tu calidad de vida a través de productos naturales respaldados por la ciencia.</p>
+                <button onclick="location.href='/productos'">Ver Productos</button>
+            </div>
+        </section>
+
+        <section class="salud">
+            <h2>Cuidado y Salud Natural</h2>
+            <p>Nuestros productos están formulados para fortalecer el sistema inmunológico, mejorar la energía y promover el equilibrio del cuerpo.</p>
+            <ul>
+                <li><strong>Hidratación y Detoxificación:</strong> Elimina toxinas del cuerpo naturalmente.</li>
+                <li><strong>Salud Cognitiva:</strong> Antioxidantes como la astaxantina mejoran memoria y concentración.</li>
+                <li><strong>Fortaleza Física:</strong> El magnesio ayuda a músculos fuertes y recuperación óptima.</li>
+                <li><strong>Protección Celular:</strong> El NMN combate el envejecimiento celular.</li>
+            </ul>
+        </section>
+
+        <section class="educativo">
+            <h2>Aprende Más Sobre Nuestros Productos</h2>
+
+            <div class="articulos">
+                <article>
+                    <h3>Astaxantina: El Poderoso Antioxidante</h3>
+                    <p>La astaxantina protege la piel del sol, mejora el rendimiento físico y refuerza el sistema inmune.</p>
+                </article>
+
+                <article>
+                    <h3>NMN: Revolución en Longevidad Celular</h3>
+                    <p>NMN aumenta el NAD+ en el cuerpo, mejora la vitalidad y combate el envejecimiento.</p>
+                </article>
+
+                <article>
+                    <h3>Magnesio Liposomado</h3>
+                    <p>Mejora el sueño, la relajación muscular y el equilibrio nervioso con alta absorción.</p>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Elyon. Comprometidos con el bienestar natural.</p>
+        </footer>
+    </div>
+</body>
+</html>

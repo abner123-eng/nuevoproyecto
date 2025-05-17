@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - Elyon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <div class="frame"> <!-- Contenedor -->
+        <header>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='imagenes/logoElyon.png') }}" alt="Logo Elyon" class="img-logo-principal">
+            </div>
+            <h1>Contáctanos</h1>
+            <nav>
+                <button onclick="location.href='/'">Inicio</button>
+                <button onclick="location.href='/sobre-nosotros'">Conócenos</button>
+                <button onclick="location.href='/productos'">Productos</button>
+                <button onclick="location.href='/contacto'">Contacto</button>
+            </nav>
+        </header>
+
+        <main class="formulario-container">
+            <h2>Envíanos tus datos</h2>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <div class="mensaje-flash">
+                  {% for mensaje in messages %}
+                    <p>{{ mensaje }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+
+            <form action="{{ url_for('enviar_mensaje') }}" method="POST">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="telefono">Celular:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="producto">Producto de interés:</label>
+                <select id="producto" name="producto" required>
+                    <option value="">--Selecciona--</option>
+                    <option value="Astaxantina">Astaxantina</option>
+                    <option value="NMN">NMN</option>
+                    <option value="Magnesio">Magnesio Liposomado</option>
+                </select>
+
+                <label for="mensaje">Comentarios / Preguntas:</label>
+                <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>© 2025 Elyon. Tu salud, nuestra misión.</p>
+        </footer>
+    </div> <!-- Cierre del marco -->
+</body>
+</html>

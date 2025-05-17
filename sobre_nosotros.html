@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <div class="frame"> <!-- Marco para diseño  -->
+        <header>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='imagenes/logoElyon.png') }}" alt="Logo Elyon" class="img-nosotros">
+            </div>
+            <h1>Quiénes Somos</h1>
+            <nav>
+                <button onclick="location.href='/'">Inicio</button>
+                <button onclick="location.href='/productos'">Nuestros Productos</button>
+                <button onclick="location.href='/contacto'">Contáctanos</button>
+            </nav>
+        </header>
+
+        <section class="sobre-nosotros">
+            <div class="contenido-nosotros">
+                <h2>Nuestra Misión</h2>
+                <p>En <strong>Elyon</strong>, trabajamos para transformar vidas a través del poder de la naturaleza. Ofrecemos productos naturales respaldados por la ciencia que promueven un bienestar físico, mental y emocional duradero.</p>
+
+                <h2>Nuestra Visión</h2>
+                <p>Ser una marca líder en el mercado de salud natural en Colombia y Latinoamérica, conocida por su transparencia, efectividad y compromiso con el bienestar integral de sus clientes.</p>
+
+                <h2>Valores que nos definen</h2>
+                <ul>
+                    <li> Honestidad y transparencia</li>
+                    <li> Compromiso con la salud y el medio ambiente</li>
+                    <li> Empatía y cercanía con nuestros clientes</li>
+                    <li> Innovación constante en nuestros productos</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Elyon - Tu fuente de bienestar natural.</p>
+        </footer>
+    </div> <!-- Cierre del marco -->
+</body>
+</html>

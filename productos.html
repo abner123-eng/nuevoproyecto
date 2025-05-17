@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos - Elyon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="frame">
+        <header>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='imagenes/logoElyon.png') }}" alt="Logo Elyon" class="img-logo-principal">
+            </div>
+            <h1>Nuestros Productos</h1>
+            <nav>
+                <button onclick="location.href='/'">Inicio</button>
+                <button onclick="location.href='/sobre-nosotros'">Conócenos</button>
+                <button onclick="location.href='/productos'">Productos</button>
+                <button onclick="location.href='/contacto'">Contacto</button>
+            </nav>
+        </header>
+
+        <main class="contenedor-productos">
+            <section class="producto">
+                <h2>Astaxantina</h2>
+                <img src="{{ url_for('static', filename='imagenes/astaxanthin.png') }}" alt="Astaxantina">
+                <p>Un potente antioxidante natural que protege tus células, mejora tu piel y fortalece tu sistema inmune.</p>
+                <canvas id="graficoAstaxantina"></canvas>
+            </section>
+
+            <section class="producto">
+                <h2>NMN</h2>
+                <img src="{{ url_for('static', filename='imagenes/nmn.png') }}" alt="NMN">
+                <p>Contribuye a la longevidad celular y el aumento de la energía al elevar los niveles de NAD+ en el cuerpo.</p>
+                <canvas id="graficoNMN"></canvas>
+            </section>
+
+            <section class="producto">
+                <h2>Magnesio Liposomado</h2>
+                <img src="{{ url_for('static', filename='imagenes/magnesio-liposomado.png') }}" alt="Magnesio Liposomado">
+                <p>Facilita el sueño, reduce el estrés y mejora la salud muscular gracias a su alta absorción.</p>
+                <canvas id="graficoMagnesio"></canvas>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Elyon. Tu salud, nuestra misión.</p>
+        </footer>
+
+        <script>
+            // gráficos
+            const opcionesGrafico = {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { beginAtZero: true } }
+            };
+
+            document.querySelectorAll("canvas").forEach(canvas => {
+                canvas.style.maxWidth = "350px"; 
+                canvas.style.maxHeight = "250px";
+                canvas.style.margin = "auto";
+                canvas.style.display = "block";
+            });
+
+            new Chart(document.getElementById('graficoAstaxantina'), {
+                type: 'bar',
+                data: {
+                    labels: ['Antioxidante', 'Sistema inmune', 'Piel', 'Energía'],
+                    datasets: [{ label: 'Beneficios', data: [90, 85, 80, 70], backgroundColor: '#e74c3c' }]
+                },
+                options: opcionesGrafico
+            });
+
+            new Chart(document.getElementById('graficoNMN'), {
+                type: 'line',
+                data: {
+                    labels: ['Día 1', 'Día 15', 'Día 30', 'Día 60'],
+                    datasets: [{ label: 'Niveles de energía', data: [60, 75, 85, 95], fill: true, borderColor: '#2ecc71', backgroundColor: 'rgba(46, 204, 113, 0.3)' }]
+                },
+                options: opcionesGrafico
+            });
+
+            //gráfica para Magnesio Liposomado (tipo Pie)
+            new Chart(document.getElementById('graficoMagnesio'), {
+                type: 'pie',
+                data: {
+                    labels: ['Sueño', 'Relajación', 'Absorción', 'Músculos'],
+                    datasets: [{
+                        label: 'Beneficios',
+                        data: [85, 80, 95, 90],
+                        backgroundColor: ['#3498db', '#2ecc71', '#e74c3c', '#f39c12']
+                    }]
+                },
+                options: opcionesGrafico
+            });
+        </script>
+    </div>
+</body>
+</html>
